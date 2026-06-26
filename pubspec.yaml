@@ -67,6 +67,7 @@ flutter:
     - assets/snowfall.json
     - assets/cloudy.json
     - assets/sunny.json
+    - assets/sunset.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

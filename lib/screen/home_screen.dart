@@ -59,42 +59,42 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 SizedBox(height: 30,),
-                Text('WEATHER APP',style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xffFFFFFF),
-                ),),
-                SizedBox(height: 25,),
-
-                TextField(
-                  controller: _controller,
-                  cursorColor: Color(0xff000000),
-                  cursorHeight: 20,
-                  style: TextStyle(
+                Text('Weather App',style:TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Color(0xffFFFFFF),
-                  ),
-                    decoration: InputDecoration(
-                        hintText: 'Enter City Name',
-                        helperStyle: TextStyle(
-                          color: Colors.white70,
-                        ),
-                        filled: true,
-                      fillColor: Colors.white38,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(30)
+                    fontSize: 30
+                ),),
+                SizedBox(height: 20,),
+                if (_weather != null)
+                  WeatherCard(weather: _weather!),
+                SizedBox(height: 25,),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    controller: _controller,
+                    cursorColor: Color(0xff18181B),
+                    cursorHeight: 20,
+                    style: TextStyle(
+                      color: Color(0xff18181B),
+                    ),
+                      decoration: InputDecoration(
+                          hintText: 'City Name',
+                          helperStyle: TextStyle(
+                            color: Color(0xffE5E7EB),
+                          ),
+                          filled: true,
+                        fillColor: Color(0xffE5E7EB),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(30)
+                        )
                       )
-                    )
+                  ),
                 ),
 
-                SizedBox(height: 20,),
+                SizedBox(height: 15,),
                 ElevatedButton(
                     onPressed: _getWeather,
-                    child: Text('Get Weather',style: TextStyle(
-                    fontSize: 18,
-                      color: Color(0xffFFFFFF)
-                ),
-                    ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black26,
                     foregroundColor: Colors.blue,
@@ -102,6 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(30)
                       )
                   ),
+                    child: Text('Get Weather',style: TextStyle(
+                    fontSize: 18,
+                      color: Color(0xffFFFFFF)
+                ),
+                    ),
                 ),
                 if (_isLoading)
                   Padding(padding: EdgeInsets.all(28),
@@ -109,8 +114,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Color(0xffFFFFFF),
                   ),
                   ),
-                if (_weather != null)
-                  WeatherCard(weather: _weather!)
               ],
             ),
           ),

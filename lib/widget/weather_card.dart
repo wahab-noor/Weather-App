@@ -44,12 +44,13 @@ class WeatherCard extends StatelessWidget {
 
               SizedBox(height: 10,),
               
-              Text('${weather.temperature.toStringAsFixed(1)} C',style: Theme.of(context).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.bold),),
+              Text('${weather.temperature.toStringAsFixed(1)} °C',style: Theme.of(context).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.bold),),
 
               SizedBox(height: 10,),
               
               Text(weather.description,
               style: Theme.of(context).textTheme.titleMedium,
+
               ),
 
             SizedBox(height: 20),
@@ -57,7 +58,7 @@ class WeatherCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Humidity: ${weather.humidity} %',style: Theme.of(context).textTheme.bodyMedium,),
+                  Text('Humidity: ${weather.humidity} %',style: Theme.of(context).textTheme.bodyMedium),
                   Text('Wind: ${weather.windSpeed} m/s',style: Theme.of(context).textTheme.bodyMedium,),
 
                 ],
@@ -66,7 +67,6 @@ class WeatherCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-
                   Column(
                     children: [
                       Icon(Icons.wb_sunny_outlined,color: Colors.orange,),
